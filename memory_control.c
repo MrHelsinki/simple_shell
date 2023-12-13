@@ -5,7 +5,6 @@
  * @str: pointer to string
  * @c: character to be filled with
  * @n: number of times to use c
- *
  * Return: pointer to str
  */
 char *_memset(char *str, char c, unsigned int n)
@@ -20,7 +19,6 @@ char *_memset(char *str, char c, unsigned int n)
 /**
  * ffree - frees a string of strings
  * @pp: string of strings
- *
  * Return: void
  */
 void ffree(char **pp)
@@ -72,11 +70,12 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  */
 int set_free(void **ptr)
 {
-        if (ptr && *ptr)
-        {
-                free(*ptr);
-                *ptr = NULL;
-                return (1);
-        }
-        return (0);
+		if (ptr && *ptr)
+		{
+			free(*ptr);
+			*ptr = NULL;
+			return (1);
+		}
+
+			return (0);
 }

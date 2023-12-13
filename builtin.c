@@ -1,9 +1,8 @@
 #include "shell.h"
 
 /**
- * builtin_exit - exits the shell
+ * builtin_exit - exit
  * @info: Structure of arguments
- *
  * Return: exits the shell
  */
 int builtin_exit(info_t *info)
