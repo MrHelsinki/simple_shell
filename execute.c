@@ -110,7 +110,7 @@ void cmd_path(info_t *info)
 }
 
 /**
- * fork_cmd - creates process to execute using execve
+ * fork_exec - creates process to execute using execve
  * @info: info structure
  *
  * Return: void

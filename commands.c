@@ -86,27 +86,26 @@ char *get_path(info_t *info, char *path, char *cmd)
 }
 
 /**
- * chain_str - check if string is a chain delimeter
+ * chain_str - check
  * @info: the parameter struct
  * @buf: the char buffer
  * @p: address of current position in buf
- *
- * Return: 1 if chain delimeter, 0 otherwise
+ * Return: 1
  */
 int chain_str(info_t *info, char *buf, size_t *p)
 {
-        size_t i = *p;
+		size_t i = *p;
 
-        if (buf[i] == '|' && buf[i + 1] == '|')
-        {
-                buf[i] = 0;
-                i++;
-                info->cmd_buf_type = CMD_OR;
+		if (buf[i] == '|' && buf[i + 1] == '|')
+		{
+				buf[i] = 0;
+            	i++;
+				info->cmd_buf_type = CMD_OR;
         }
         else if (buf[i] == '&' && buf[i + 1] == '&')
         {
                 buf[i] = 0;
-                i++;
+            	i++;
                 info->cmd_buf_type = CMD_AND;
         }
         else if (buf[i] == ';')
@@ -132,24 +131,24 @@ int chain_str(info_t *info, char *buf, size_t *p)
  */
 void check_chain(info_t *info, char *buf, size_t *p, size_t i, size_t len)
 {
-        size_t j = *p;
+       size_t j = *p;
 
-        if (info->cmd_buf_type == CMD_AND)
-        {
-                if (info->status)
-                {
-                        buf[i] = 0;
-                        j = len;
-                }
-        }
-        if (info->cmd_buf_type == CMD_OR)
-        {
-                if (!info->status)
-                {
-                        buf[i] = 0;
-                        j = len;
-                }
-        }
+       if (info->cmd_buf_type == CMD_AND)
+       {
+               if (info->status)
+               {
+                       buf[i] = 0;
+                       j = len;
+           	}
+       }
+       if (info->cmd_buf_type == CMD_OR)
+       {
+               if (!info->status)
+               {
+                       buf[i] = 0;
+                       j = len;
+               }
+       }
 
-        *p = j;
+       *p = j;
 }
