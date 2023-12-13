@@ -84,8 +84,8 @@ typedef struct passinfo
 
 /**
  *struct builtin - contains a builtin string and related function
- *@type: the builtin command flag
- *@func: the function
+ *@type: flag
+ *@func: the func
  */
 typedef struct builtin
 {
@@ -138,27 +138,22 @@ void sigintHandler(int);
 int builtin_exit(info_t *);
 
 
-/* str_functions.c functions */
 int _strlen(char *);
 int _strcmp(char *, char *);
 char *starts_with(const char *, const char *);
 char *_strcat(char *, char *);
 char *_strncat(char *, char *, int);
-
-/* help_functions.c functions */
 char *_strcpy(char *, char *);
 char *_strdup(const char *);
 void _puts(char *);
 int _putchar(char);
 char *_strncpy(char *, char *, int);
 
-/* memory_control.c functions */
 char *_memset(char *, char, unsigned int);
 void ffree(char **);
 void *_realloc(void *, unsigned int, unsigned int);
 int set_free(void **);
 
-/* support_functions.c functions */
 int interactive(info_t *);
 int is_delim(char, char *);
 int _isalpha(int);
@@ -166,7 +161,6 @@ int _atoi(char *);
 char **strtow(char *, char *);
 
 
-/* lists_functions.c functions */
 list_t *add_node_end(list_t **, const char *, int);
 size_t print_list_str(const list_t *);
 void free_list(list_t **);

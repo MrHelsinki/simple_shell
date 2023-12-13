@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * main - entry point
- * @ac: arg count
- * @av: arg vector
+ * main - main
+ * @ac: argc
+ * @av: argv
  * Return: 0
  */
 int main(int ac, char **av)
